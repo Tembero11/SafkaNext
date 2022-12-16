@@ -4,8 +4,12 @@
 :root {
   --brand-primary: #ff3535;
   --brand-primary-dark: #ca2e2e;
-  --gray-secondary: 
 }
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background: #230808;
+  }
+} */
 
 body {
   margin: 0;

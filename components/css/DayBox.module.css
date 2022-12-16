@@ -4,15 +4,10 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  aspect-ratio: 8 / 16;
-  min-width: 200px;
-  max-width: 300px;
-  height: 80%;
+  width: 250px;
+  height: 400px;
 }
 
-.today {
-  animation: SpawnToday 300ms cubic-bezier(0.075, 0.82, 0.165, 1) 100ms 1 forwards;
-}
 .today > .box {
   border-color: var(--brand-primary);
 }
@@ -51,7 +46,12 @@
   color: #979797;
 }
 
-@keyframes SpawnToday {
-  0% {}
-  100% {height: 90%;}
+.diet {
+  background: var(--brand-primary);
+  margin-left: .5em;
+  border-radius: 10px;
+  padding: 1px 4px 1px 4px;
+  font-size: small;
+  font-weight: bold;
+  color: white;
 }

@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { countWeekForwardFromDay, dayNamesFinnish, getCurrentDayIndex } from "../utils/common";
+import { countForwardFromDay, dayNamesFinnish, getCurrentDayIndex, getDayFromMonday, isSameDate } from "../utils/common";
 import getWeekMenu, { DayMenu, Weekday, WeekMenu } from "../utils/getWeekMenu";
 import styles from "./css/Week.module.css";
 import DayBox from "./DayBox";
@@ -11,27 +11,40 @@ export default function Week(props: { menu: WeekMenu | null }) {
     )
   }
 
+  const timeframe = [];
+
+  const today = new Date();
+  today.setHours(0, 0, 0);
   const todayId = getCurrentDayIndex();
 
-  const restOfWeek: (DayMenu | number)[] = props.menu.days.slice(todayId)
 
-  const sevenDays = countWeekForwardFromDay(getCurrentDayIndex());
+  const apiWeekdayDate = new Date(props.menu.days[todayId].date);
+  apiWeekdayDate.setHours(0, 0, 0);
 
-  restOfWeek.push(...sevenDays);
+  if (isSameDate(apiWeekdayDate, today)) {
+    timeframe.push(...props.menu.days.slice(todayId));
+  }else {
+    timeframe.push(...countForwardFromDay(today, 7 - todayId));
+    timeframe.push(...props.menu.days);
+  }
 
   return (
     <div className={styles.weekContainer}>
       {
-        restOfWeek.splice(0, 7).map((dayMenu, index) => {
-          if (typeof dayMenu == "number") {
-            if (dayMenu == Weekday.Saturday || dayMenu == Weekday.Sunday) {
+        timeframe.slice(0, 6).map((dayMenu, index) => {
+          if (dayMenu instanceof Date) {
+            if (getDayFromMonday(dayMenu) == Weekday.Saturday || getDayFromMonday(dayMenu) == Weekday.Sunday) {
               return <Fragment key={index}></Fragment>
             }
-            return <DayBox key={index} dayName={dayNamesFinnish[dayMenu]} menu={undefined}/>
+            return <DayBox key={index} dayName={dayNamesFinnish[getDayFromMonday(dayMenu)]} date={dayMenu} menu={undefined} isToday={
+              isSameDate(new Date(dayMenu), today)
+            }/>
           }
 
           if (!dayMenu.hash) return null;
-          return <DayBox key={dayMenu.hash} dayName={dayNamesFinnish[dayMenu.dayId]} menu={dayMenu} isToday={dayMenu.dayId === todayId} />
+          return <DayBox key={dayMenu.hash} dayName={dayNamesFinnish[dayMenu.dayId]} menu={dayMenu} isToday={
+            isSameDate(new Date(dayMenu.date), today)
+          } />
         })
       }
     </div>
