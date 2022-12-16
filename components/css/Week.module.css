@@ -1,0 +1,10 @@
+.weekContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  gap: 35px;
+  width: 80%;
+  height: 60%;
+}
