@@ -1,7 +1,13 @@
+.rootContainer {
+  position: relative;
+  width: 100vw;
+  height: 430px;
+}
+
 .container {
   position: relative;
   width: 100vw;
-  height: 400px;
+  height: 430px;
   overflow: hidden;
 }
 
@@ -24,7 +30,6 @@
   overflow: hidden;
   min-width: 100%;
   min-height: 100%;
-  background: green;
 }
 
 .tabNames {
@@ -39,4 +44,36 @@
   display: inline-block;
   width: 100%;
   margin: 0;
+}
+
+.tabBox {
+  position: absolute;
+  background: var(--brand-primary);
+  border-radius: 20px;
+  margin-left: 20px;
+  transform: scale(0.9);
+
+  width: 80%;
+  /*Remove the padding*/
+  height: calc(100% - 17px);
+}
+
+.tabIndicators {
+  position: relative;
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+}
+.tabIndicator {
+  width: 10px;
+  height: 10px;
+  background: var(--brand-primary);
+  border-radius: 100%;
+}
+.tabIndicatorSelected {
+  background: #a4a4a4;
+  transform: scale(1.1);
 }
