@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { countForwardFromDay, dayNamesFinnish, getCurrentDayIndex, getDayFromMonday, isSameDate } from "../utils/common";
-import getWeekMenu, { DayMenu, Weekday, WeekMenu } from "../utils/getWeekMenu";
+import { Weekday, WeekMenu } from "../utils/getWeekMenu";
 import styles from "./css/Week.module.css";
 import DayBox from "./DayBox";
 

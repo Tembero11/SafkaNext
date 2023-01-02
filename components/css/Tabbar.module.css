@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+}
+
+.tabs {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 17px;
+  box-sizing: content-box;
+}
+
+.tab {
+  display: inline-block;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
+  background: green;
+}
+
+.tabNames {
+  position: relative;
+  white-space: nowrap;
+  font-size: 30px;
+  height: 1.5em;
+}
+.tabNames h5 {
+  /* transition: 200ms left linear; */
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
