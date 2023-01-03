@@ -48,11 +48,11 @@
 
 .tabBox {
   position: absolute;
-  background: var(--brand-primary);
+  background: #ced4da;
+  color: black;
   border-radius: 20px;
   margin-left: 20px;
   transform: scale(0.9);
-
   width: 80%;
   /*Remove the padding*/
   height: calc(100% - 17px);

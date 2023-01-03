@@ -1,0 +1,8 @@
+<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g transform="translate(0, 0)">
+        <path
+            d="M486.7 0C444.2 38 401.7 76 392.8 127.6C383.9 179.2 408.6 244.5 389.9 283.3C371.3 322.2 309.4 334.7 264.5 364.1C219.6 393.4 191.7 439.7 150.4 462.9C109.2 486.2 54.6 486.5 0 486.7L0 0Z"
+            fill="#f2f4f8"></path>
+    </g>
+</svg>

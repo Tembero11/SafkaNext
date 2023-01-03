@@ -1,11 +1,14 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Tabbar, { Tab } from "../components/Tabbar";
 import Week from "../components/Week";
 import getWeekMenu, { WeekMenu } from "../utils/getWeekMenu";
+
+import bgBlob from "../public/assets/bg-blob.svg";
 
 const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
   const [isMobile, setMobile] = useState(false);
@@ -19,8 +22,28 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
         <Head>
           <title>Safka Online</title>
         </Head>
-        <Navbar/>
-        <div className={"content"}>
+        {/* <Navbar/> */}
+        <div id="app" style={{backgroundImage: `url(${bgBlob.src}e)`}}>
+          <div id="under">
+            <h1 id="logo">Safka.<br />Online</h1>
+          </div>
+          <div id="overlay">
+            <h5 className="mainHeader">Tänään ruokana <span className="mainHeaderCount">( 3 )</span></h5>
+            <Tabbar>
+                <Tab name={"Tab1"}>
+                  <p>I&apos;m tab 1</p>
+                </Tab>
+                <Tab name={"Tab2"}>
+                  <p>I&apos;m tab 2</p>
+                </Tab>
+                <Tab name={"Tab3"}>
+                  <p>I&apos;m tab 3</p>
+                </Tab>
+              </Tabbar>
+          </div>
+          <Footer/>
+        </div>
+        {/* <div className={"content"}>
           {
             isMobile ? (
               <Tabbar>
@@ -38,8 +61,8 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
               <Week menu={menu}/>
             )
           }
-        </div>
-        <Footer/>
+        </div> */}
+        {/* <Footer/> */}
       </>
   );
 }

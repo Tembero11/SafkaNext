@@ -1,13 +1,9 @@
 .navbar {
-  position: relative;
-  z-index: 10000;
-  width: 100vw;
-  height: 60px;
-}
-.logo {
-  font-family: 'Montserrat', sans-serif;
-  z-index: 10000;
-  color: var(--brand-primary);
-  margin-left: 20px;
-  user-select: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 0;
+  /* padding: 15px 20px 15px 20px; */
+  width: calc(100vw - 40px);
+  height: 100vh;
 }
