@@ -30,15 +30,15 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
           <div id="overlay">
             <h5 className="mainHeader">Tänään ruokana <span className="mainHeaderCount">( 3 )</span></h5>
             <Tabbar>
-                <Tab name={"Tab1"}>
-                  <p>I&apos;m tab 1</p>
-                </Tab>
-                <Tab name={"Tab2"}>
-                  <p>I&apos;m tab 2</p>
-                </Tab>
-                <Tab name={"Tab3"}>
-                  <p>I&apos;m tab 3</p>
-                </Tab>
+                {
+                  [...new Array(20)].map((v, index) => {
+                    return (
+                      <Tab key={index} name={"Tab" + (index + 1)}>
+                        <p>I&apos;m tab {index + 1}</p>
+                      </Tab>
+                    )
+                  })
+                }
               </Tabbar>
           </div>
           <Footer/>

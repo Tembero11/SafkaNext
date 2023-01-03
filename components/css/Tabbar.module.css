@@ -1,7 +1,9 @@
-.rootContainer {
-  position: relative;
-  width: 100vw;
-  height: 430px;
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .container {
@@ -14,6 +16,7 @@
 .tabs {
   overflow-y: hidden;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
   position: relative;
@@ -67,13 +70,21 @@
   justify-content: center;
   gap: 10px;
 }
-.tabIndicator {
-  width: 10px;
-  height: 10px;
-  background: var(--brand-primary);
-  border-radius: 100%;
+
+.indicators {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  white-space: nowrap;
 }
-.tabIndicatorSelected {
-  background: #a4a4a4;
-  transform: scale(1.1);
+
+.indicators::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg,#f2f4f8, transparent, #f2f4f8);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }

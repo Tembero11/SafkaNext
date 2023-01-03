@@ -1,0 +1,35 @@
+.root {
+    display: inline-block;
+    margin: 2px 0 2px 0;
+    width: 50px;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.weekDay {
+    margin: 0;
+}
+.calendarDay {
+    margin: 0;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: grey;
+    border-radius: 100%;
+}
+.containerActive .dot {
+    background: var(--brand-primary);
+    transform: scale(1.1);
+}
+.containerActive {
+    color: var(--brand-primary);
+    font-weight: bold;
+}
