@@ -3,8 +3,9 @@ import { countForwardFromDay, dayNamesFinnish, getCurrentDayIndex, getDayFromMon
 import { Weekday, WeekMenu } from "../utils/getWeekMenu";
 import styles from "./css/Week.module.css";
 import DayBox from "./DayBox";
+import Tabbar, { Tab } from "./Tabbar";
 
-export default function Week(props: { menu: WeekMenu | null }) {
+export default function Week(props: { menu: WeekMenu | null, isMobile?: boolean }) {
   if (!props.menu) {
     return (
       <p>There was an internal server error when trying load the menu. This problem is probably temporary and will be fixed soon!</p>
@@ -26,6 +27,22 @@ export default function Week(props: { menu: WeekMenu | null }) {
   }else {
     timeframe.push(...countForwardFromDay(today, 7 - todayId));
     timeframe.push(...props.menu.days);
+  }
+
+  if (props.isMobile) {
+    return (
+      <Tabbar>
+        {
+          [...new Array(20)].map((v, index) => {
+            return (
+              <Tab key={index} name={"Tab" + (index + 1)}>
+                <p>I&apos;m tab {index + 1}</p>
+              </Tab>
+            )
+          })
+        }
+      </Tabbar>
+    )
   }
 
   return (

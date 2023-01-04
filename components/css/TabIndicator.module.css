@@ -3,6 +3,7 @@
     margin: 2px 0 2px 0;
     width: 50px;
     user-select: none;
+    cursor: pointer;
 }
 
 .container {

@@ -15,6 +15,8 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
 
   useEffect(() => {
     setMobile(isMobileDevice());
+
+    window.addEventListener("resize", () => setMobile(isMobileDevice()));
   }, [])
 
   return (
@@ -23,23 +25,19 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
           <title>Safka Online</title>
         </Head>
         {/* <Navbar/> */}
-        <div id="app" style={{backgroundImage: `url(${bgBlob.src}e)`}}>
+        <div id="app">
           <div id="under">
             <h1 id="logo">Safka.<br />Online</h1>
           </div>
           <div id="overlay">
             <h5 className="mainHeader">Tänään ruokana <span className="mainHeaderCount">( 3 )</span></h5>
-            <Tabbar>
-                {
-                  [...new Array(20)].map((v, index) => {
-                    return (
-                      <Tab key={index} name={"Tab" + (index + 1)}>
-                        <p>I&apos;m tab {index + 1}</p>
-                      </Tab>
-                    )
-                  })
-                }
-              </Tabbar>
+            <Week menu={menu} isMobile={isMobile}/>
+            {/* {
+              isMobile ? (
+                
+              ) : (<Week menu={menu}/>)
+
+            } */}
           </div>
           <Footer/>
         </div>
@@ -71,7 +69,7 @@ function isMobileDevice() {
   if (typeof window == "undefined") return false;
 
   const isTouch = "ontouchstart" in window;
-  const isSmallScreen = window.innerWidth < 550;
+  const isSmallScreen = window.innerWidth < 525;
 
   return isTouch && isSmallScreen;
 }
