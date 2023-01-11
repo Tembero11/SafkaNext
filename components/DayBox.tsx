@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { toLocaleDateString } from "../utils/common";
 import { DayMenu, Weekday } from "../utils/getWeekMenu";
 import styles from "./css/DayBox.module.css";
@@ -31,15 +31,15 @@ export default function DayBox(props: IProps) {
           {
             props.menu?.menu.map(food => {
               return (
-                <>
-                  <li key={food.name}>
+                <Fragment key={food.name}>
+                  <li>
                     {food.name}
-                    {food.isLactoseFree ? <Diet>L</Diet> : <></>}
-                    {food.isDairyFree ? <Diet>M</Diet> : <></>}
-                    {food.isGlutenFree ? <Diet>G</Diet> : <></>}
+                    {food.isLactoseFree ? <Diet longName="Laktoositon">L</Diet> : <></>}
+                    {food.isDairyFree ? <Diet longName="Maidoton">M</Diet> : <></>}
+                    {food.isGlutenFree ? <Diet longName="Gluteeniton">G</Diet> : <></>}
                   </li>
                   <br />
-                </>
+                </Fragment>
               )
             })
           }
@@ -52,6 +52,11 @@ export default function DayBox(props: IProps) {
   )
 }
 
-function Diet(props: { children: string }) {
-  return <span className={styles.diet}>{props.children}</span>
+export function Diet(props: { children: string, longName?: string }) {
+  return (
+    <span className={styles.diet} style={{cursor: props.longName ? "pointer" : "default"}}>
+      {props.children}
+      {props.longName ? <div className={styles.dietTooltip}>{props.longName}</div> : <></>}
+    </span>
+  )
 }

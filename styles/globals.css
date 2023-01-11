@@ -1,9 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
 
 :root {
   --brand-primary: #ff3535;
   --brand-primary-dark: #ca2e2e;
+
+  --ui-text-not-important: #8f8f8f;
+  --ui-text-selection-color: white;
+  --ui-text-selection-bg: #ff6767;
+  --ui-tooltip-bg: #4a4a4a;
+}
+::-moz-selection {
+  color: var(--ui-text-selection-color);
+  background: var(--ui-text-selection-bg);
+}
+
+::selection {
+  color: var(--ui-text-selection-color);
+  background: var(--ui-text-selection-bg);
 }
 /* @media (prefers-color-scheme: dark) {
   body {
@@ -39,4 +53,23 @@ body {
 
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#shortDesc {
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: 500;
+  color: var(--ui-text-not-important);
+}
+
+#letterMeanings {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+  color: var(--ui-text-not-important);
+  font-weight: bold;
 }

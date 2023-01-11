@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import { Diet } from "../components/DayBox";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Week from "../components/Week";
@@ -12,9 +13,15 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
           <title>Safka Online</title>
         </Head>
         <Navbar/>
+        <p id="shortDesc">Juhannuskukkulan opiskelija- ja <br /> henkilöstöruokailun helposti luettava <br /> ruokalista netissä.</p>
         <div className={"content"}>
           <Week menu={menu}/>
         </div>
+        <p id="letterMeanings">
+          <span><Diet>L</Diet>&nbsp; Laktoositon</span>
+          <span><Diet>M</Diet>&nbsp; Maidoton</span>
+          <span><Diet>G</Diet>&nbsp; Gluteeniton</span>
+        </p>
         <Footer/>
       </>
   );
