@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Diet } from "../components/DayBox";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ThemeSwitch from "../components/ThemeSwitch";
 import Week from "../components/Week";
 import getWeekMenu, { WeekMenu } from "../utils/getWeekMenu";
 

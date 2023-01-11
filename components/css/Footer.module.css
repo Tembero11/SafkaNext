@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: var(--brand-primary);
+    background: var(--ui-footer-color);
     width: 100vw;
     height: 20%;
     padding-bottom: 20px;
@@ -30,4 +30,9 @@
 
 .header {
     color: white;
+}
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background: linear-gradient(transparent, var(--ui-footer-color));
+    }
 }

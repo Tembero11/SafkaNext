@@ -8,7 +8,12 @@
   --ui-text-not-important: #8f8f8f;
   --ui-text-selection-color: white;
   --ui-text-selection-bg: #ff6767;
+  --ui-day-box-color: white;
   --ui-tooltip-bg: #4a4a4a;
+  --ui-divider-color: #d9d9d9;
+  --ui-today-box-glow: #ff353548;
+  --ui-header-color: #262c30;
+  --ui-footer-color: #ff3535;
 }
 ::-moz-selection {
   color: var(--ui-text-selection-color);
@@ -19,11 +24,19 @@
   color: var(--ui-text-selection-color);
   background: var(--ui-text-selection-bg);
 }
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   body {
-    background: #230808;
+    background: #1b1619;
+    color: white;
   }
-} */
+  :root {
+    --ui-day-box-color: #1b1619;
+    --ui-text-not-important: #f4f4f4;
+    --ui-divider-color: #484848;
+    --ui-header-color: #ffffff;
+    --ui-footer-color: #481515;
+  }
+}
 
 html {
   overflow-x: hidden;

@@ -1,4 +1,5 @@
 import styles from "./css/Navbar.module.css";
+import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navbar() {
   return (
