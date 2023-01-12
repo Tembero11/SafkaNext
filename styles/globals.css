@@ -8,6 +8,7 @@
   --ui-text-not-important: #8f8f8f;
   --ui-text-selection-color: white;
   --ui-text-selection-bg: #ff6767;
+  --ui-text-regular-color: black;
   --ui-day-box-color: white;
   --ui-tooltip-bg: #4a4a4a;
   --ui-divider-color: #d9d9d9;
@@ -35,6 +36,7 @@
     --ui-divider-color: #484848;
     --ui-header-color: #ffffff;
     --ui-footer-color: #481515;
+    --ui-text-regular-color: white;
   }
 }
 
@@ -49,15 +51,6 @@ body {
   height: 100vh;
 }
 
-#__next {
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .content {
   position: relative;
   display: flex;
@@ -70,7 +63,7 @@ body {
 
 #shortDesc {
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 0;
   font-weight: 500;
   color: var(--ui-text-not-important);
 }

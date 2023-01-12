@@ -1,9 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { Diet } from "../components/DayBox";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import ThemeSwitch from "../components/ThemeSwitch";
 import Week from "../components/Week";
 import getWeekMenu, { WeekMenu } from "../utils/getWeekMenu";
 
@@ -13,7 +10,6 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
         <Head>
           <title>Safka Online</title>
         </Head>
-        <Navbar/>
         <p id="shortDesc">Juhannuskukkulan opiskelija- ja <br /> henkilöstöruokailun helposti luettava <br /> ruokalista netissä.</p>
         <div className={"content"}>
           <Week menu={menu}/>
@@ -23,7 +19,6 @@ const Home: NextPage<{ menu: WeekMenu | null }> = ({menu}) => {
           <span><Diet>M</Diet>&nbsp; Maidoton</span>
           <span><Diet>G</Diet>&nbsp; Gluteeniton</span>
         </p>
-        <Footer/>
       </>
   );
 }
